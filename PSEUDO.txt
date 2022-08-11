@@ -1,0 +1,14 @@
+--JS timed quiz that stores high scores
+
+-Start button
+
+-timer element
+
+-once a question is answered confirm correct or not
+
+	- if correct display correct and move to next question
+	-if incorrect display incorrect and subtract time
+
+-game ends when time runs out or all answers are solved
+
+-store high score and player name
