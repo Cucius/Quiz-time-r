@@ -17,4 +17,5 @@
 -game ends when time runs out or all answers are solved
 
 -store high score and player name
+	-Player enters name
 	-call points out of local storage
