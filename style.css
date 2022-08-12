@@ -1,8 +1,71 @@
+:root {
+  --white: #fffffc;
+  --neutral: #beb7a4;
+  --dark: #2f2235;
+  --main: #416165;
+  --active: #e4572e;
+}
+
 * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-  }
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--main);
+  color: var(--dark);
+}
+
+button {
+  background: radial-gradient(circle, rgb(190, 183, 164) 0%, rgba(65, 97, 101, 0.954) 100%);
+  border-radius: 8px;
+  color: var(--dark);
+  cursor: pointer;
+  font-size: 2em;
+  letter-spacing: 0.21px;
+  line-height: 16px;
+  max-width: 255px;
+  padding: 20px 52px;
+  text-align: center;
+  transition-duration: 0.15s;
+  transition-property: background-color;
+  transition-timing-function: linear;
+  margin-top: 0.6em;
+}
+
+.large-font {
+  font-size: 3.5em;
+  text-align: center;
+}
+
+/* Style the side navigation */
+.hi-score {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  background-color: var(--neutral);
+}
+
+/* Side navigation links */
+.hi-score li {
+  color: var(--white);
+  padding: 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color on hover */
+.hi-score li:hover {
+  color: var(--active);
+  background: var(--dark);
+}
+
+/* Style the container */
+.container {
+  margin-left: 200px;
+  padding-left: 20px;
+}
