@@ -17,17 +17,15 @@ var question = ["What is always coming but never arrives?", "What gets wetter th
 var quizAnswers = 0;
 var answers = ["Tomorrow", "A towel", "Fire", "A Phone", "Normal"];
 
-var rightAnswer = true;
-var wrongAnswer = false;
+// var rightAnswer = true;
+// var wrongAnswer = false;
 
 // var wrongAnswer1 = false;
 // var wrongAnswer2 = false;
 
-startButton.addEventListener("click", startGame);
-
 //Start game
 function startGame() {
-  timerCount = 100;
+  timerCount = 60;
   startButton.disabled = true;
   startTimer();
   genQuestion();
@@ -41,6 +39,8 @@ function startTimer() {
     timerElement.textContent = timerCount;
     if (timerCount === 0) {
       clearInterval(timer);
+    } else if (timerCount <= 20) {
+      timerElement.setAttribute("style", "color: var(--active)");
     }
   }, 1000);
 }
@@ -73,13 +73,11 @@ li1.setAttribute("style", "margin-left: 10%");
 li2.setAttribute("style", "margin-left: 10%");
 li3.setAttribute("style", "margin-left: 10%");
 
-//Length must increase to keep correct answer with the question
-// quizQuestion = question.length;
-// quizAnswers = answers.length;
-// console.log(quizQuestion);
-// console.log(quizAnswers);
+li1.setAttribute("class", "answers");
+li2.setAttribute("class", "answers");
+li3.setAttribute("class", "answers");
 
-// check answer
+// // check answer
 // var getAnswers = document.querySelector(".answers");
 
 // getAnswers.addEventListener("click", function (event) {
@@ -103,10 +101,30 @@ li3.setAttribute("style", "margin-left: 10%");
 //   }
 // });
 
-//check answer add points for correct and remove time for incorrect
-// function nextQuestion(answer){
-//     for(var i = 0; i < quizQuestion; i++ ){
-//         if()
-//     }
+// Length must increase to keep correct answer with the question
+// check answer add points for correct and remove time for incorrect
+function nextQuestion() {
+  for (var i = 5; i < quizQuestion.length; i--) {
+    quizQuestion = question[i];
+    quizAnswers = answers[i];
+    console.log(quizQuestion);
+    console.log(quizAnswers);
 
-// }
+    if (quizQuestion === quizAnswers) {
+      totalPoints++;
+      genQuestion();
+    } else {
+      totalPoints--;
+      genQuestion();
+      timerCount - 10;
+    }
+    localStorage.setItem("Points", totalPoints);
+  }
+}
+
+startButton.addEventListener("click", startGame);
+
+//   document.getElementById("answers").click();
+getAnswers.addEventListener("click", nextQuestion);
+
+console.log(totalPoints);
