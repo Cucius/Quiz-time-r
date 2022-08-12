@@ -3,15 +3,26 @@ var timerElement = document.querySelector(".timer-count");
 var getQuiz = document.querySelector(".quiz");
 var getAnswers = document.querySelector(".answers");
 
+var favoriteEl = document.createElement("div");
+
 var timer;
 var timerCount;
 
 var totalPoints = 0;
 
 var quizQuestion = 0;
-var question = ["ThWhat is always coming but never arrives?", "What gets wetter the more it dries?", "What is it that lives if it is fed, and dies if you give it a drink?", "What never asks a question but gets answered all the time?", "What word would you use to describe a man who does not have all his fingers on one hand?"];
+
+var question = ["What is always coming but never arrives?", "What gets wetter the more it dries?", "What is it that lives if it is fed, and dies if you give it a drink?", "What never asks a question but gets answered all the time?", "What word would you use to describe a man who does not have all his fingers on one hand?"];
+
 var quizAnswers = 0;
-var answers = ["a", "b", "c"];
+var answers = ["Tomorrow", "A towel", "Fire", "A Phone", "Normal"];
+
+var rightAnswer = true;
+var wrongAnswer = false;
+
+// var wrongAnswer1 = false;
+// var wrongAnswer2 = false;
+
 startButton.addEventListener("click", startGame);
 
 //Start game
@@ -41,14 +52,32 @@ function genQuestion() {
   getQuiz.textContent = question[numQuestion];
 }
 function genAnswers() {
-  var numAnswers = 0;
-  getAnswers.textContent = answers[numAnswers];
+  document.body.children[0].children[1].children[4].appendChild(favoriteEl);
 }
 
-quizQuestion = question.length;
-quizAnswers = answers.length;
+var numAnswers = 0;
 
-console.log(answers);
+var li1 = document.createElement("button");
+var li2 = document.createElement("button");
+var li3 = document.createElement("button");
+
+favoriteEl.appendChild(li1);
+favoriteEl.appendChild(li2);
+favoriteEl.appendChild(li3);
+
+li1.textContent = answers[numAnswers];
+li2.textContent = answers[numAnswers + 1];
+li3.textContent = answers[numAnswers + 2];
+
+li1.setAttribute("style", "margin-left: 10%");
+li2.setAttribute("style", "margin-left: 10%");
+li3.setAttribute("style", "margin-left: 10%");
+
+//Length must increase to keep correct answer with the question
+// quizQuestion = question.length;
+// quizAnswers = answers.length;
+// console.log(quizQuestion);
+// console.log(quizAnswers);
 
 // check answer
 // var getAnswers = document.querySelector(".answers");

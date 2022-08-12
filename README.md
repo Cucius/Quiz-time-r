@@ -20,4 +20,4 @@ This is a quiz designed to be fun and display a simple record of score at the en
 
 ![Screenshot](./Quiz%20Screenshot.png)
 
-You can find the deployed webpage here: [Quiz-time-r]
+You can find the deployed webpage here: [Quiz-time-r](https://cucius.github.io/Quiz-time-r/)
