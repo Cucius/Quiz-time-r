@@ -1,14 +1,20 @@
 --JS timed quiz that stores high scores
 
 -Start button
+	function start game 
+		-starts the timer and can no longer be pressed
+
 
 -timer element
+	start at 100
 
 -once a question is answered confirm correct or not
 
 	- if correct display correct and move to next question
+		-store in local a point
 	-if incorrect display incorrect and subtract time
-
+		-remove time from timer
 -game ends when time runs out or all answers are solved
 
 -store high score and player name
+	-call points out of local storage
